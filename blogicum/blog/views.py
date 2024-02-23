@@ -1,10 +1,9 @@
-# from typing import Union
-
+from django.http import Http404
 from django.shortcuts import render
 
 posts = [
     {
-        'id': 0,
+        'post_id': 0,
         'location': 'Остров отчаянья',
         'date': '30 сентября 1659 года',
         'category': 'travel',
@@ -16,7 +15,7 @@ posts = [
                 который назвал островом Отчаяния.''',
     },
     {
-        'id': 1,
+        'post_id': 1,
         'location': 'Остров отчаянья',
         'date': '1 октября 1659 года',
         'category': 'not-my-day',
@@ -32,7 +31,7 @@ posts = [
                 гиблого места.''',
     },
     {
-        'id': 2,
+        'post_id': 2,
         'location': 'Остров отчаянья',
         'date': '25 октября 1659 года',
         'category': 'not-my-day',
@@ -53,9 +52,12 @@ def index(request):
     return render(request, template, context)
 
 
-def post_detail(request, id):
+def post_detail(request, post_id):
+    try:
+        context = {'post': posts[post_id]}
+    except IndexError:
+        raise (Http404)
     template = 'blog/detail.html'
-    context = {'post': posts[id]}
     return render(request, template, context)
 
 

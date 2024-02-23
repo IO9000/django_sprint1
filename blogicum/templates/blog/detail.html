@@ -3,7 +3,6 @@
   {{ posts.location }}. {{ posts.date }}
 {% endblock %}
 {% block content %}
-<div class="container py-5">
   <article>
     <ul>
       <li>
@@ -17,8 +16,7 @@
       </li>
     </ul>         
     <p>
-      {{ post.text }}
+      {{ post.text|linebreaksbr }}
     </p>          
   </article>                
-</div>
 {% endblock %}
