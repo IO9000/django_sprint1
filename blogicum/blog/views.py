@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 posts = [
     {
-        'post_id': 0,
+        'id': 0,
         'location': 'Остров отчаянья',
         'date': '30 сентября 1659 года',
         'category': 'travel',
@@ -15,7 +15,7 @@ posts = [
                 который назвал островом Отчаяния.''',
     },
     {
-        'post_id': 1,
+        'id': 1,
         'location': 'Остров отчаянья',
         'date': '1 октября 1659 года',
         'category': 'not-my-day',
@@ -31,7 +31,7 @@ posts = [
                 гиблого места.''',
     },
     {
-        'post_id': 2,
+        'id': 2,
         'location': 'Остров отчаянья',
         'date': '25 октября 1659 года',
         'category': 'not-my-day',
